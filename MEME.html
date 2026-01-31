@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Totally Not a Rickroll</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: black;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    #playButton {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        color: white;
+        font-size: 3rem;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    #video {
+        display: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+</head>
+<body>
+
+<button id="playButton"></button>
+
+<video id="video" playsinline>
+    <source src="rick-astley-never-gonna-give-you-up_362329.mp4" type="video/mp4">
+</video>
+
+<script>
+    const btn = document.getElementById("playButton");
+    const vid = document.getElementById("video");
+
+    btn.addEventListener("click", () => {
+        btn.style.display = "none";   
+        vid.style.display = "block";  
+        vid.play();                   
+    });
+</script>
+
+</body>
+</html>
